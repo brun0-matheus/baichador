@@ -142,6 +142,8 @@ namespace Baichador {
             int code = 0;
             string text = "";
 
+            Console.WriteLine("[CMD] " + cmd);
+
             proc = new Process();
             ProcessStartInfo info = new ProcessStartInfo {
                 FileName = "youtube-dl.exe",

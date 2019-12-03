@@ -115,26 +115,30 @@ namespace Baichador {
         private void ComboBox_SelectedIndexChanged(object sender, EventArgs e) {
             // Muda o texto dos labels e a visibilidade dos botoes de acordo com as opcoes
 
+            label3.Visible = textBox3.Visible = btnDir.Visible = btnDir2.Visible = btnFile.Visible = false;
+
             switch(comboBox.SelectedIndex) {
                 case 0:
-                    label1.Text = "Insira a url da música:";
-                    label2.Text = "Digite o nome com que você quer salvar:";
+                    label1.Text = "Link:";
+                    label2.Text = "Título:";
 
-                    btnFile.Visible = false;
-                    btnDir.Visible = false;
+                    label3.Text = "Diretório:";
+
+                    label3.Visible = true;
+                    btnDir2.Visible = true;
+                    textBox3.Visible = true;
                     break;
                 case 1:
-                    label1.Text = "Selecione a lista:";
-                    label2.Text = "Selecione a pasta para salvar:";
+                    label1.Text = "Lista:";
+                    label2.Text = "Diretório:";
 
                     btnFile.Visible = true;
                     btnDir.Visible = true;
                     break;
                 case 2:
-                    label1.Text = "Insira a url da playlist:";
-                    label2.Text = "Selecione a pasta para salvar:";
+                    label1.Text = "Link:";
+                    label2.Text = "Diretório:";
 
-                    btnFile.Visible = false;
                     btnDir.Visible = true;
                     break;
             }
@@ -156,11 +160,13 @@ namespace Baichador {
         private void BtnDir_Click(object sender, EventArgs e) {
             // Seleciona um diretorio (para salvar os arquivos)
 
-            using(FolderBrowserDialog dialog = new FolderBrowserDialog()) {
-                if(dialog.ShowDialog() == DialogResult.OK && !string.IsNullOrEmpty(dialog.SelectedPath)) {
-                    textBox2.Text = dialog.SelectedPath;
-                }
-            }
+            textBox2.Text = SelectPath();
+        }
+
+        private void BtnDir2_Click(object sender, EventArgs e) {
+            // Seleciona um diretorio (para salvar os arquivos)
+
+            textBox3.Text = SelectPath();
         }
 
         private void BtnUpdate_Click(object sender, EventArgs e) {
@@ -172,9 +178,16 @@ namespace Baichador {
 
         private void BtnDown_Click(object sender, EventArgs e) {
             string url = textBox1.Text.Trim();
-            string path = textBox2.Text.Trim();
+            string path = "";
+            string title = "";
 
-            if(comboBox.SelectedIndex != 0 && String.IsNullOrEmpty(path))
+            if(comboBox.SelectedIndex == 0) {
+                path = textBox3.Text.Trim();
+                title = textBox2.Text.Trim();
+            } else
+                path = textBox2.Text.Trim();
+
+            if(String.IsNullOrEmpty(path))
                 path = DEF_SAVEDIR;
 
             ChangeControlsState(false);
@@ -183,11 +196,11 @@ namespace Baichador {
                 switch(comboBox.SelectedIndex) {
                     case 0:
                         lblInfo.Text = OPT1_DOWNLOADING;
-                        if(String.IsNullOrEmpty(path))
-                            path = "%(title)s";
+                        if(String.IsNullOrEmpty(title))
+                            title = "%(title)s";
 
                         dw = new Downloader(Downloader.MODE.NORMAL_VIDEO, CompletedJustOneURL);
-                        dw.Download(url, "", DEF_SAVEDIR + "\\" + path);
+                        dw.Download(url, "", path + "\\" + title);
 
                         break;
                     case 1:
@@ -217,6 +230,20 @@ namespace Baichador {
             if(dw != null) {
                 dw.Kill();
                 dw = null;
+            }
+        }
+
+        /* Outros */
+
+        private string SelectPath() {
+            // Seleciona um diretorio (para salvar os arquivos)
+
+            using(FolderBrowserDialog dialog = new FolderBrowserDialog()) {
+                if(dialog.ShowDialog() == DialogResult.OK && !string.IsNullOrEmpty(dialog.SelectedPath)) {
+                    return dialog.SelectedPath;
+                }
+
+                return "";
             }
         }
 
