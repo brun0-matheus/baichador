@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Baichador
 
   O Setup está localizado na pasta *Release*.  
