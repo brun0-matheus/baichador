@@ -1,0 +1,33 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Baichador.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="MAX_THREADS" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="MAX_RETRIES" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="CMD_NORMAL" Type="System.String" Scope="User">
+      <Value Profile="(Default)">--no-playlist -o "{0}{1}.%(ext)s" -qx --audio-format mp3 "{2}"</Value>
+    </Setting>
+    <Setting Name="CMD_GET_PLAYLIST_VIDEOS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">--yes-playlist --flat-playlist --dump-single-json "{0}"</Value>
+    </Setting>
+    <Setting Name="CMD_GET_TITLE" Type="System.String" Scope="User">
+      <Value Profile="(Default)">--no-playlist --skip-download --get-title --no-warnings "{0}"</Value>
+    </Setting>
+    <Setting Name="BASE_URL" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://www.youtube.com/watch?v=</Value>
+    </Setting>
+    <Setting Name="DEFAULT_SAVEDIR" Type="System.String" Scope="User">
+      <Value Profile="(Default)">%userprofile%\Music</Value>
+    </Setting>
+    <Setting Name="LIST_FORM_WIDTH" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">730</Value>
+    </Setting>
+    <Setting Name="LIST_FORM_MAX_HEIGHT" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">805</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

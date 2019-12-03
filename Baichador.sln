@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29009.5
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Baichador", "Baichador\Baichador.csproj", "{567FC9D1-C4EA-4D65-B8E9-577E29B9BB1C}"
+EndProject
+Project("{840C416C-B8F3-42BC-B0DD-F6BB14C9F8CB}") = "SetupBaichador", "SetupBaichador\SetupBaichador.aiproj", "{3D0D726C-268C-4A12-8C7E-57AE1823DE69}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		All|Any CPU = All|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{567FC9D1-C4EA-4D65-B8E9-577E29B9BB1C}.All|Any CPU.ActiveCfg = Release|Any CPU
+		{567FC9D1-C4EA-4D65-B8E9-577E29B9BB1C}.All|Any CPU.Build.0 = Release|Any CPU
+		{567FC9D1-C4EA-4D65-B8E9-577E29B9BB1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{567FC9D1-C4EA-4D65-B8E9-577E29B9BB1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{567FC9D1-C4EA-4D65-B8E9-577E29B9BB1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{567FC9D1-C4EA-4D65-B8E9-577E29B9BB1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D0D726C-268C-4A12-8C7E-57AE1823DE69}.All|Any CPU.ActiveCfg = DefaultBuild
+		{3D0D726C-268C-4A12-8C7E-57AE1823DE69}.All|Any CPU.Build.0 = DefaultBuild
+		{3D0D726C-268C-4A12-8C7E-57AE1823DE69}.Debug|Any CPU.ActiveCfg = DefaultBuild
+		{3D0D726C-268C-4A12-8C7E-57AE1823DE69}.Debug|Any CPU.Build.0 = DefaultBuild
+		{3D0D726C-268C-4A12-8C7E-57AE1823DE69}.Release|Any CPU.ActiveCfg = DefaultBuild
+		{3D0D726C-268C-4A12-8C7E-57AE1823DE69}.Release|Any CPU.Build.0 = DefaultBuild
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0B20070C-4460-4E6C-A369-83578D210121}
+	EndGlobalSection
+EndGlobal
