@@ -28,6 +28,3 @@
   5) Caso o error persistir, contate o desenvolvedor lindo e maravilhoso.  
   
 Aproveite o programa :)  
-=======
-# baichador
-Um programa que baixa músicas do YouTube
